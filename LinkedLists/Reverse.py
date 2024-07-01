@@ -92,7 +92,7 @@ class LinkedList:
         temp.next = new_node
         self.length += 1
         return True
-#This Remove.py
+#From Remove.py
     def remove(self, index):
         if index < 0 or index >= self.length:
             return None
@@ -106,13 +106,23 @@ class LinkedList:
         temp.next = None
         self.length -= 1
         return temp
+#This Reverse.py
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
 
-
-my_linked_list = LinkedList(11)
+my_linked_list = LinkedList(1)
+my_linked_list.append(2)
 my_linked_list.append(3)
-my_linked_list.append(23)
-my_linked_list.append(7)
+my_linked_list.append(4)
 
-print(my_linked_list.remove(2), '\n')
+print('LL before reverse():')
+my_linked_list.print_list()
 
+my_linked_list.reverse()
+
+print('\nLL after reverse():')
 my_linked_list.print_list()
